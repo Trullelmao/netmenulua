@@ -18,6 +18,16 @@ function clearcon()
 	print(" ")
 end end
 
+local hide = {
+	["CHudHealth"] = true,
+	["CHudBattery"] = true
+}
+
+hook.Add( "HUDShouldDraw", "HideHUD", function( name )
+	if ( hide[ name ] ) then return false end
+	-- null
+end )
+
 function removehudshit() ---------------------- add all shit that needs to get removed when closing menu etc ( hud, drawings, images u fucking mong )
 		hook.Remove("HUDPaint","TIME") 
 		hook.Remove("HUDPaint","WELCOME")
@@ -38,7 +48,8 @@ function removehudshit() ---------------------- add all shit that needs to get r
 		hook.Remove("HUDPaint","LINE4")
 		hook.Remove("HUDPaint","LINE5")
 		hook.Remove("HUDPaint","LINE6")
-		hook.Remove( "HUDPaint","loadingTIME")
+		hook.Remove("HUDShouldDraw", "HideHUD")
+		hook.Remove("HUDPaint","loadingTIME")
 		hook.Remove("HUDPaintBackground","BACKGROUND")
 		timer.Destroy("keepvisible")
 		timer.Destroy("timerefresh")
