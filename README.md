@@ -2,7 +2,7 @@
 
 2.0 
 
-play in 1920 x 1080 or you're retarded
+play in 1920 x 1080 or menu wont work
 
 You will need to add the Hack-Regular.ttf to 
 GarrysMod\garrysmod\resource\fonts
