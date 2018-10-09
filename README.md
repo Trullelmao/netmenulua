@@ -1,6 +1,6 @@
 # netmenulua
 
-2.0 
+2.2 
 
 play in 1920 x 1080 or menu wont work
 
